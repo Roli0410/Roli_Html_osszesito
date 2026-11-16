@@ -1,31 +1,203 @@
 <!DOCTYPE html>
-<html lang="hu">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kirándulás</title>
 </head>
-<style>
-    table,
-    th,
-    td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-</style>
+
 
 <body>
 
-    <p>Az osztály nevember 22.-én Szegedre látogat egy tanulmányi kirándulás keretében</p>
-    <h2>Főbb tudnivalók</h2>
-    <table>
-        <tr><th>Gyülekező</th> <td>6:30 az iskola előtt</td></tr>
-        <tr><th>Indulás</th> <td>7:00 (busz)</td></tr>
-        <tr><th>Várható érkezés</th> <td>18:30 az iskola előtt</td></tr>
-        <tr><th>Kíséőr tanár</th> <td>Kovács Anna</td></tr>
+    <h1>11. évfolyam szegedi kirándulása</h1>
 
+    <p>
+        Október 16-án egy <strong>egynapos</strong> kirándulásra indulunk Szegedre,
+        ahol érdekes látnivalókat tekintünk meg, és közösen töltünk el egy
+        <em>tartalmas napot</em>.
+        <a href="#jelentkezes">Jelentkezem a kirándulásra</a>.
+    </p>
+
+    <blockquote>
+        „Remélem, hogy mindannyian jól fogjuk érezni magunkat Szegeden!”
+        – Kovács Anna
+    </blockquote>
+
+    <h2>A kirándulás időpontja</h2>
+
+    <p>
+        A kirándulás időpontja: 2026. október 16., péntek.
+        A gyülekező 6:30-kor lesz az iskola udvarán, az indulás pedig 6:45-kor.
+        Várhatóan körülbelül 18:00-ra érkezünk haza.
+    </p>
+
+    <h2>Program</h2>
+
+    <ol>
+        <li>Utazás Szegedre</li>
+        <li>Dóm tér és a Fogadalmi templom megtekintése</li>
+        <li>
+            Móra Ferenc Múzeum
+            <ul>
+                <li>Állandó kiállítás</li>
+                <li>Időszaki kiállítás</li>
+            </ul>
+        </li>
+        <li>Ebéd a belvárosban</li>
+        <li>Hazautazás</li>
+    </ol>
+
+    <h2>Mit hozz magaddal?</h2>
+
+    <ul>
+        <li>Személyi igazolvány</li>
+        <li>Innivaló</li>
+        <li>Esőkabát</li>
+        <li>Kényelmes cipő</li>
+    </ul>
+
+    <h2>Szeged</h2>
+
+    <p>
+        Szeged Magyarország egyik jelentős városa, amely számos kulturális és
+        történelmi látnivalóval rendelkezik.
+    </p>
+
+    <img src="szeged.jpg" alt="Szeged látképe a Tiszával és a város épületeivel">
+
+    <p>
+        <a href="https://hu.wikipedia.org/wiki/Szeged">További információ Szegedről a Wikipédián</a>
+    </p>
+
+    <h2>Tudnivalók</h2>
+
+    <dl>
+        <dt>Gyülekező</dt>
+        <dd>6:30, az iskola udvara</dd>
+
+        <dt>Indulás</dt>
+        <dd>6:45</dd>
+
+        <dt>Kísérő tanár</dt>
+        <dd>
+            <a href="mailto:anna.kovacs@iskola.hu">Kovács Anna</a>
+        </dd>
+    </dl>
+
+    <h2>Költségek</h2>
+
+    <table style="width: auto;">
+        <tr>
+            <th>Tétel</th>
+            <th>Ár</th>
+        </tr>
+        <tr>
+            <td>Utazás</td>
+            <td>2500 Ft</td>
+        </tr>
+        <tr>
+            <td>Belépő</td>
+            <td>1800 Ft</td>
+        </tr>
+        <tr>
+            <td>Ebéd</td>
+            <td>2200 Ft</td>
+        </tr>
+        <tr>
+            <th colspan="2">Összesen: 6500 Ft</th>
+        </tr>
     </table>
+
+    <h2 id="jelentkezes">Jelentkezési űrlap</h2>
+
+    <form action="https://httpbin.org/post" method="post">
+
+        <fieldset>
+            <legend>Személyes adatok</legend>
+
+            <p>
+                <label for="nev">Név:</label>
+                <input type="text" id="nev" name="nev" required>
+            </p>
+
+            <p>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <p>
+                <label for="telefon">Telefon:</label>
+                <input type="tel" id="telefon" name="telefon" placeholder="+36 30 123 4567">
+            </p>
+
+            <p>
+                <label for="letszam">Hány fővel jössz (magadat is beleértve)?</label>
+                <input type="number" id="letszam" name="letszam" value="1" min="1" max="4" required>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Melyik buszra ülsz?</legend>
+
+            <p>
+                <input type="radio" id="busz1" name="busz" value="elso_busz" checked>
+                <label for="busz1">1. busz</label>
+            </p>
+
+            <p>
+                <input type="radio" id="busz2" name="busz" value="masodik_busz">
+                <label for="busz2">2. busz</label>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Egyéb</legend>
+
+            <p>
+                <label for="etkezes">Étkezés:</label>
+                <select id="etkezes" name="etkezes" required>
+                    <option value="">-- válassz --</option>
+                    <option value="husos">Húsos menü</option>
+                    <option value="vegetarianus">Vegetáriánus menü</option>
+                    <option value="sajat_etel">Hozok magamnak ételt</option>
+                </select>
+            </p>
+
+            <p>Extra program:</p>
+
+            <p>
+                <input type="checkbox" id="varlatogatas" name="extra_program" value="varlatogatas">
+                <label for="varlatogatas">Várlátogatás</label>
+            </p>
+
+            <p>
+                <input type="checkbox" id="setahajozas" name="extra_program" value="setahajozas">
+                <label for="setahajozas">Sétahajózás a Tiszán</label>
+            </p>
+
+            <p>
+                <label for="megjegyzes">Megjegyzés:</label><br>
+                <textarea id="megjegyzes" name="megjegyzes" rows="4"></textarea>
+            </p>
+        </fieldset>
+
+        <p>
+            <input type="checkbox" id="szulo" name="szulo_tudja" value="igen" required>
+            <label for="szulo">A szülő tud a kirándulásról.</label>
+        </p>
+
+        <p>
+            <button type="submit">Jelentkezem</button>
+        </p>
+
+    </form>
+
+    <hr>
+
+    <p>
+        Készítette: Roli &copy; 2026
+    </p>
+
 </body>
 
 </html>
